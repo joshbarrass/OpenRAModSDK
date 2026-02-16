@@ -47,6 +47,78 @@ SS:
 	Selectable:
 		DecorationBounds: 1621, 1621
 
+DSUB:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Ship
+		BuildAtProductionType: Submarine
+		BuildPaletteOrder: 70
+		Prerequisites: ~spen, stek, ~techlevel.high, ~ships.russia
+		Description: Submerged anti-naval unit.\narmed with a nuclear device.\nCan detect other submarines.\n  Strong vs Everything\n  Weak vs Naval units\n  Special Ability: Submerge
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Nuclear Submarine
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 30000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 12
+		Speed: 35
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 8c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	Targetable:
+		TargetTypes: WaterActor, Ship, Submarine, Repair
+		RequiresCondition: !underwater
+	Targetable@UNDERWATER:
+		TargetTypes: Underwater, Submarine
+		RequiresCondition: underwater
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 0
+		CloakDelay: 100
+		CloakSound: subshow1.aud
+		UncloakSound: subshow1.aud
+		CloakedCondition: underwater
+		Palette: submerged
+		PauseOnCondition: cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+	AttackFrontal:
+		FacingTolerance: 512
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		DamageSource: Killer
+	Selectable:
+		DecorationBounds: 44,44
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	-DamageMultiplier@IRONCURTAIN:
+	KillsSelf:
+		RequiresCondition: invulnerability || triggered
+	Chronoshiftable:
+		ExplodeInstead: true
+	RenderSprites:
+		Image: msub
+
 MSUB:
 	Inherits: ^Submarine
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
