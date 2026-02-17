@@ -47,3 +47,8 @@ msub:
 	idle:
 		Facings: 16
 	icon: msubicon
+
+dsub:
+	idle:
+		Facings: 16
+	icon: msubicon
