@@ -10,12 +10,12 @@ PackageFormats: Mix
 FileSystem: ContentInstallerFileSystem
 	SystemPackages:
 		^EngineDir
-		$ra: ra
+		$raex: raex
 		^EngineDir|mods/common: common
 		~^SupportDir|Content/ra/v2/: content
 		common|scripts
-		ra|scripts
-		ra|uibits
+		raex|scripts
+		raex|uibits
 	ContentPackages:
 		content|allies.mix
 		content|conquer.mix
@@ -37,8 +37,8 @@ FileSystem: ContentInstallerFileSystem
 		~content|scores.mix
 		~content|general.mix
 		# Below are mod-provided (system) packages that need to be loaded after the content packages so they can override content assets.
-		ra|bits
-		ra|bits/desert
+		raex|bits
+		raex|bits/desert
 	RequiredContentFiles:
 		content|expand/chrotnk1.aud
 		content|expand/fixit1.aud
@@ -67,46 +67,46 @@ FileSystem: ContentInstallerFileSystem
 	ContentInstallerMod: ra-content
 
 MapFolders:
-	ra|maps: System
-	~^SupportDir|maps/ra/{DEV_VERSION}: User
+	raex|maps: System
+	~^SupportDir|maps/ra/release-20250330: User
 
 Rules:
-	ra|rules/misc.yaml
-	ra|rules/ai.yaml
-	ra|rules/player.yaml
-	ra|rules/palettes.yaml
-	ra|rules/world.yaml
-	ra|rules/defaults.yaml
-	ra|rules/vehicles.yaml
-	ra|rules/husks.yaml
-	ra|rules/structures.yaml
-	ra|rules/infantry.yaml
-	ra|rules/civilian.yaml
-	ra|rules/decoration.yaml
-	ra|rules/aircraft.yaml
-	ra|rules/ships.yaml
-	ra|rules/fakes.yaml
+	raex|rules/misc.yaml
+	raex|rules/ai.yaml
+	raex|rules/player.yaml
+	raex|rules/palettes.yaml
+	raex|rules/world.yaml
+	raex|rules/defaults.yaml
+	raex|rules/vehicles.yaml
+	raex|rules/husks.yaml
+	raex|rules/structures.yaml
+	raex|rules/infantry.yaml
+	raex|rules/civilian.yaml
+	raex|rules/decoration.yaml
+	raex|rules/aircraft.yaml
+	raex|rules/ships.yaml
+	raex|rules/fakes.yaml
 
 Sequences:
-	ra|sequences/ships.yaml
-	ra|sequences/vehicles.yaml
-	ra|sequences/structures.yaml
-	ra|sequences/infantry.yaml
-	ra|sequences/aircraft.yaml
-	ra|sequences/misc.yaml
-	ra|sequences/decorations.yaml
+	raex|sequences/ships.yaml
+	raex|sequences/vehicles.yaml
+	raex|sequences/structures.yaml
+	raex|sequences/infantry.yaml
+	raex|sequences/aircraft.yaml
+	raex|sequences/misc.yaml
+	raex|sequences/decorations.yaml
 
 TileSets:
-	ra|tilesets/snow.yaml
-	ra|tilesets/interior.yaml
-	ra|tilesets/temperat.yaml
-	ra|tilesets/desert.yaml
+	raex|tilesets/snow.yaml
+	raex|tilesets/interior.yaml
+	raex|tilesets/temperat.yaml
+	raex|tilesets/desert.yaml
 
 Cursors:
-	ra|cursors.yaml
+	raex|cursors.yaml
 
 Chrome:
-	ra|chrome.yaml
+	raex|chrome.yaml
 
 Assemblies: OpenRA.Mods.Common.dll, OpenRA.Mods.Cnc.dll
 
@@ -122,8 +122,8 @@ ChromeLayout:
 	common|chrome/ingame-infostats.yaml
 	common|chrome/ingame-info-lobby-options.yaml
 	common|chrome/ingame-menu.yaml
-	ra|chrome/ingame-observer.yaml
-	ra|chrome/ingame-player.yaml
+	raex|chrome/ingame-observer.yaml
+	raex|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
 	common|chrome/ingame-debug-hpf.yaml
@@ -154,7 +154,7 @@ ChromeLayout:
 	common|chrome/connection.yaml
 	common|chrome/replaybrowser.yaml
 	common|chrome/gamesave-browser.yaml
-	ra|chrome/gamesave-loading.yaml
+	raex|chrome/gamesave-loading.yaml
 	common|chrome/dropdowns.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
@@ -170,29 +170,29 @@ FluentMessages:
 	common|fluent/chrome.ftl
 	common|fluent/hotkeys.ftl
 	common|fluent/rules.ftl
-	ra|fluent/ra.ftl
-	ra|fluent/chrome.ftl
-	ra|fluent/hotkeys.ftl
-	ra|fluent/rules.ftl
+	raex|fluent/ra.ftl
+	raex|fluent/chrome.ftl
+	raex|fluent/hotkeys.ftl
+	raex|fluent/rules.ftl
 
 AllowUnusedFluentMessagesInExternalPackages: false
 
 Weapons:
-	ra|weapons/explosions.yaml
-	ra|weapons/ballistics.yaml
-	ra|weapons/missiles.yaml
-	ra|weapons/other.yaml
-	ra|weapons/smallcaliber.yaml
-	ra|weapons/superweapons.yaml
+	raex|weapons/explosions.yaml
+	raex|weapons/ballistics.yaml
+	raex|weapons/missiles.yaml
+	raex|weapons/other.yaml
+	raex|weapons/smallcaliber.yaml
+	raex|weapons/superweapons.yaml
 
 Voices:
-	ra|audio/voices.yaml
+	raex|audio/voices.yaml
 
 Notifications:
-	ra|audio/notifications.yaml
+	raex|audio/notifications.yaml
 
 Music:
-	ra|audio/music.yaml
+	raex|audio/music.yaml
 
 Hotkeys:
 	common|hotkeys/game.yaml
@@ -203,12 +203,12 @@ Hotkeys:
 	common|hotkeys/chat.yaml
 	common|hotkeys/editor.yaml
 	common|hotkeys/control-groups.yaml
-	ra|hotkeys.yaml
+	raex|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen
-	Image: ra|uibits/loadscreen.png
-	Image2x: ra|uibits/loadscreen-2x.png
-	Image3x: ra|uibits/loadscreen-3x.png
+	Image: raex|uibits/loadscreen.png
+	Image2x: raex|uibits/loadscreen-2x.png
+	Image3x: raex|uibits/loadscreen-3x.png
 
 ServerTraits:
 	LobbyCommands
@@ -219,7 +219,7 @@ ServerTraits:
 
 ChromeMetrics:
 	common|metrics.yaml
-	ra|metrics.yaml
+	raex|metrics.yaml
 
 Fonts:
 	Tiny:
@@ -251,12 +251,12 @@ Fonts:
 		Size: 24
 		Ascender: 18
 	Title:
-		Font: ra|ZoodRangmah.ttf
+		Font: raex|ZoodRangmah.ttf
 		Size: 48
 		Ascender: 26
 
 Missions:
-	ra|missions.yaml
+	raex|missions.yaml
 
 MapGrid:
 	TileSize: 24,24
