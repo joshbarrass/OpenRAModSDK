@@ -1,6 +1,6 @@
 Metadata:
-	Title: Red Alert
-	Version: {DEV_VERSION}
+	Title: OpenRAEX
+	Version: release-20210321-mb-nukesub
 	Website: https://www.openra.net
 	WebIcon32: https://www.openra.net/images/icons/ra_32x32.png
 
@@ -12,7 +12,7 @@ Packages:
 	~^SupportDir|Content/ra/v2/cnc
 	~^SupportDir|Content/ra/v2/movies
 	^EngineDir
-	$ra: ra
+	$raex: raex
 	^EngineDir|mods/common: common
 	~main.mix
 	~conquer.mix
@@ -30,52 +30,52 @@ Packages:
 	~expand2.mix
 	~hires1.mix
 	~desert.mix
-	ra|bits
-	ra|bits/desert
-	ra|bits/scripts
-	ra|uibits
+	raex|bits
+	raex|bits/desert
+	raex|bits/scripts
+	raex|uibits
 
 MapFolders:
-	ra|maps: System
-	~^SupportDir|maps/ra/{DEV_VERSION}: User
+	raex|maps: System
+	~^SupportDir|maps/ra/release-20210321: User
 
 Rules:
-	ra|rules/misc.yaml
-	ra|rules/ai.yaml
-	ra|rules/player.yaml
-	ra|rules/palettes.yaml
-	ra|rules/world.yaml
-	ra|rules/defaults.yaml
-	ra|rules/vehicles.yaml
-	ra|rules/husks.yaml
-	ra|rules/structures.yaml
-	ra|rules/infantry.yaml
-	ra|rules/civilian.yaml
-	ra|rules/decoration.yaml
-	ra|rules/aircraft.yaml
-	ra|rules/ships.yaml
-	ra|rules/fakes.yaml
+	raex|rules/misc.yaml
+	raex|rules/ai.yaml
+	raex|rules/player.yaml
+	raex|rules/palettes.yaml
+	raex|rules/world.yaml
+	raex|rules/defaults.yaml
+	raex|rules/vehicles.yaml
+	raex|rules/husks.yaml
+	raex|rules/structures.yaml
+	raex|rules/infantry.yaml
+	raex|rules/civilian.yaml
+	raex|rules/decoration.yaml
+	raex|rules/aircraft.yaml
+	raex|rules/ships.yaml
+	raex|rules/fakes.yaml
 
 Sequences:
-	ra|sequences/ships.yaml
-	ra|sequences/vehicles.yaml
-	ra|sequences/structures.yaml
-	ra|sequences/infantry.yaml
-	ra|sequences/aircraft.yaml
-	ra|sequences/misc.yaml
-	ra|sequences/decorations.yaml
+	raex|sequences/ships.yaml
+	raex|sequences/vehicles.yaml
+	raex|sequences/structures.yaml
+	raex|sequences/infantry.yaml
+	raex|sequences/aircraft.yaml
+	raex|sequences/misc.yaml
+	raex|sequences/decorations.yaml
 
 TileSets:
-	ra|tilesets/snow.yaml
-	ra|tilesets/interior.yaml
-	ra|tilesets/temperat.yaml
-	ra|tilesets/desert.yaml
+	raex|tilesets/snow.yaml
+	raex|tilesets/interior.yaml
+	raex|tilesets/temperat.yaml
+	raex|tilesets/desert.yaml
 
 Cursors:
-	ra|cursors.yaml
+	raex|cursors.yaml
 
 Chrome:
-	ra|chrome.yaml
+	raex|chrome.yaml
 
 Assemblies:
 	^BinDir|OpenRA.Mods.Common.dll
@@ -91,8 +91,8 @@ ChromeLayout:
 	common|chrome/ingame-infoobjectives.yaml
 	common|chrome/ingame-infostats.yaml
 	common|chrome/ingame-menu.yaml
-	ra|chrome/ingame-observer.yaml
-	ra|chrome/ingame-player.yaml
+	raex|chrome/ingame-observer.yaml
+	raex|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
 	common|chrome/ingame-debuginfo.yaml
@@ -117,7 +117,7 @@ ChromeLayout:
 	common|chrome/connection.yaml
 	common|chrome/replaybrowser.yaml
 	common|chrome/gamesave-browser.yaml
-	ra|chrome/gamesave-loading.yaml
+	raex|chrome/gamesave-loading.yaml
 	common|chrome/dropdowns.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
@@ -128,24 +128,24 @@ ChromeLayout:
 	common|chrome/playerprofile.yaml
 
 Weapons:
-	ra|weapons/explosions.yaml
-	ra|weapons/ballistics.yaml
-	ra|weapons/missiles.yaml
-	ra|weapons/other.yaml
-	ra|weapons/smallcaliber.yaml
-	ra|weapons/superweapons.yaml
+	raex|weapons/explosions.yaml
+	raex|weapons/ballistics.yaml
+	raex|weapons/missiles.yaml
+	raex|weapons/other.yaml
+	raex|weapons/smallcaliber.yaml
+	raex|weapons/superweapons.yaml
 
 Voices:
-	ra|audio/voices.yaml
+	raex|audio/voices.yaml
 
 Notifications:
-	ra|audio/notifications.yaml
+	raex|audio/notifications.yaml
 
 Music:
-	ra|audio/music.yaml
+	raex|audio/music.yaml
 
 Translations:
-	ra|languages/english.yaml
+	raex|languages/english.yaml
 
 Hotkeys:
 	common|hotkeys/game.yaml
@@ -153,12 +153,12 @@ Hotkeys:
 	common|hotkeys/production-common.yaml
 	common|hotkeys/supportpowers.yaml
 	common|hotkeys/viewport.yaml
-	ra|hotkeys.yaml
+	raex|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen
-	Image: ra|uibits/loadscreen.png
-	Image2x: ra|uibits/loadscreen-2x.png
-	Image3x: ra|uibits/loadscreen-3x.png
+	Image: raex|uibits/loadscreen.png
+	Image2x: raex|uibits/loadscreen-2x.png
+	Image3x: raex|uibits/loadscreen-3x.png
 	Text: Filling Crates..., Charging Capacitors..., Reticulating Splines..., Planting Trees..., Building Bridges..., Aging Empires..., Compiling EVA..., Constructing Pylons..., Activating Skynet..., Splitting Atoms...
 
 ServerTraits:
@@ -169,7 +169,7 @@ ServerTraits:
 
 ChromeMetrics:
 	common|metrics.yaml
-	ra|metrics.yaml
+	raex|metrics.yaml
 
 Fonts:
 	Tiny:
@@ -201,12 +201,12 @@ Fonts:
 		Size: 24
 		Ascender: 18
 	Title:
-		Font: ra|ZoodRangmah.ttf
+		Font: raex|ZoodRangmah.ttf
 		Size: 48
 		Ascender: 26
 
 Missions:
-	ra|missions.yaml
+	raex|missions.yaml
 
 MapGrid:
 	TileSize: 24,24
@@ -295,15 +295,15 @@ ModContent:
 			TestFiles: ^SupportDir|Content/ra/v2/expand/await.aud, ^SupportDir|Content/ra/v2/expand/bog.aud, ^SupportDir|Content/ra/v2/expand/float_v2.aud, ^SupportDir|Content/ra/v2/expand/gloom.aud, ^SupportDir|Content/ra/v2/expand/grndwire.aud, ^SupportDir|Content/ra/v2/expand/rpt.aud, ^SupportDir|Content/ra/v2/expand/search.aud, ^SupportDir|Content/ra/v2/expand/traction.aud, ^SupportDir|Content/ra/v2/expand/wastelnd.aud
 			Sources: aftermath, aftermath-linux, ra-origin
 	Downloads:
-		ra|installer/downloads.yaml
+		raex|installer/downloads.yaml
 	Sources:
-		ra|installer/aftermath.yaml
-		ra|installer/allies95.yaml
-		ra|installer/cnc95.yaml
-		ra|installer/counterstrike.yaml
-		ra|installer/firstdecade.yaml
-		ra|installer/origin.yaml
-		ra|installer/soviet95.yaml
+		raex|installer/aftermath.yaml
+		raex|installer/allies95.yaml
+		raex|installer/cnc95.yaml
+		raex|installer/counterstrike.yaml
+		raex|installer/firstdecade.yaml
+		raex|installer/origin.yaml
+		raex|installer/soviet95.yaml
 
 DiscordService:
 	ApplicationId: 699222659766026240
