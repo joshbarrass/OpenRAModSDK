@@ -87,11 +87,12 @@ else
 fi
 
 # Add native libraries
+export ARCH=$(arch)
 echo "Downloading appimagetool"
 if command -v curl >/dev/null 2>&1; then
-	curl -s -L -O https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage || exit 3
+	curl -s -L -O https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage || exit 3
 else
-	wget -cq https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage || exit 3
+	wget -cq https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-${ARCH}.AppImage || exit 3
 fi
 
 echo "Building AppImage"
@@ -143,8 +144,8 @@ chmod 0755 "${APPDIR}/usr/bin/openra-${MOD_ID}-utility"
 
 install -m 0755 "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/linux/gtk-dialog.py" "${APPDIR}/usr/bin/gtk-dialog.py"
 
-chmod a+x appimagetool-x86_64.AppImage
-ARCH=x86_64 ./appimagetool-x86_64.AppImage "${APPDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}-x86_64.AppImage"
+chmod a+x appimagetool-${ARCH}.AppImage
+./appimagetool-${ARCH}.AppImage "${APPDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}-${ARCH}.AppImage"
 
 # Clean up
-rm -rf appimagetool-x86_64.AppImage "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${APPDIR}"
+rm -rf appimagetool-${ARCH}.AppImage "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${APPDIR}"
